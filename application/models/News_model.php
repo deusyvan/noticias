@@ -18,4 +18,19 @@ class News_model extends CI_Model{
             return $query->row_array();
         }
     }
+    
+    public function set_news(){
+        //Adiciona o ajudador helper
+        $this->load->helper('url');
+        //Cria a uri com o ajudador POST(title) dash = separador TRUE todas minisculas
+        $uri = url_title($this->input->post('title'), 'dash', TRUE);
+        //Cria o array data
+        $data = array(
+            'title'=> $this->input->post('title'),
+            'uri' => $uri,
+            'text' => $this->input->post('text')
+        );
+        //Inserir no bano de dados na tabela news
+        $this->db->insert('news', $data);
+    }
 }

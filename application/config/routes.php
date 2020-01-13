@@ -54,7 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //$route['welcome'] = 'welcome/index';
 //Expressão para acessa as páginas pra qualquer coisa aplica-se essa regra para
 //o primeiro item acessado pela url
-
+$route['news/create'] = 'news/create';
 $route['news/(:any)'] = 'news/view/$1';
 $route['news'] = 'news';
 $route['(:any)'] = 'pages/view/$1';
