@@ -6,9 +6,9 @@ class News_model extends CI_Model{
     }
     
     //buscar listas de noticias
-    public function get_news($uri = FALSE){
+    public function get_news($uri = false){
         //Verifica se uri é false senão traz a noticia específica
-        if($uri === FALSE){
+        if($uri === false){
             //Buscando a lista de noticias
             $query = $this->db->get('news');
             return $query->result_array();
